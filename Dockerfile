@@ -1,10 +1,3 @@
-FROM tomcat:9-jdk17-temurin
-
-WORKDIR /usr/local/tomcat/webapps/
-
-COPY target/*.war ROOT.war
-
-EXPOSE 8080
-
-CMD ["catalina.sh", "run"]
-
+from tomcat:9
+copy target/*.war /usr/local/tomcat/webapps/train.war
+cmd ["catalina.sh", "run"
